@@ -20,7 +20,7 @@ public class TrackCoordonates : MonoBehaviour
 
     public void Writer(Vector3 line)
     {
-        Swriter.Write(string.Format("{0} | {1} | {2} \n", line, this.GetComponent<Rigidbody>().velocity,Time.time));//line + " | " + this.GetComponent<Rigidbody>().velocity + "\n");
+        Swriter.Write(string.Format("{0} | {1} | {2} \n", line, this.GetComponent<Rigidbody>().velocity.magnitude,Time.time));//line + " | " + this.GetComponent<Rigidbody>().velocity + "\n");
     }
 
     // Update is called once per frame
