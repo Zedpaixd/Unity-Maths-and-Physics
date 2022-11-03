@@ -1,0 +1,15 @@
+- slider to adjust how many planets the system will have  done
+	- randomly generated in a way that they are not too close to the sun and that they dont collide with each other done?
+	- use a couple of string[] to generate random names like Planet xxyy done
+	- moons also randomly genereted per planet done
+	- moon name uses 2 different string arrays done
+	
+- clicking on a planet will show a ui done
+	- ui has planet name, amount of moons, distance from the sun etc (some info for the planet) done
+	- ui also has a  render texture showing a realtime preview of either the planet moving or how it looks like being on the planet (done first)
+	
+- orbits can be elliptical instead of circular (done)
+- orbit center can be another point instead of the center of the ellipsis (yes this is what the offset does)
+- use a line renderer to show the orbit (works but it's weird and will not implement)
+
+
