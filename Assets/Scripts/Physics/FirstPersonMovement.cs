@@ -66,8 +66,8 @@ public class FirstPersonMovement : MonoBehaviour
         if (!controller)
             controller = GetComponent<CharacterController>();
 
-        Swriter = new StreamWriter("C:\\Users\\Armand\\Desktop\\Ball.txt", false);
-        SwriterRecreated = new StreamWriter("C:\\Users\\Armand\\Desktop\\BallRecreated.txt", false);
+        //Swriter = new StreamWriter("C:\\Users\\Armand\\Desktop\\Ball.txt", false);
+        //SwriterRecreated = new StreamWriter("C:\\Users\\Armand\\Desktop\\BallRecreated.txt", false);
     }
 
     private void Update()
@@ -78,8 +78,8 @@ public class FirstPersonMovement : MonoBehaviour
         Shoot();
 
 
-        if (testBall && testBall.transform.position != prevCoords) { prevCoords = testBall.transform.position; Writer(testBall.transform.position); }
-        if (testBallRecreated && testBallRecreated.transform.position != prevCoordsRecreated) { prevCoordsRecreated = testBallRecreated.transform.position; WriterRecreated(testBallRecreated.transform.position); }
+        //if (testBall && testBall.transform.position != prevCoords) { prevCoords = testBall.transform.position; Writer(testBall.transform.position); }
+        //if (testBallRecreated && testBallRecreated.transform.position != prevCoordsRecreated) { prevCoordsRecreated = testBallRecreated.transform.position; WriterRecreated(testBallRecreated.transform.position); }
     }
 
     private void LateUpdate()
