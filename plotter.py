@@ -2,6 +2,7 @@ from unicodedata import name
 from mpl_toolkits import mplot3d
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 
 PATH = "C:\\Users\\Armand\\Desktop\\"
@@ -11,8 +12,8 @@ FILENAMESPHERE1 = "BlueSphere.txt"
 FILENAMESPHERE2 = "GreenSphere.txt"
 FILENAMESPHERE3 = "RedSphere.txt"
 
-NAME = PATH+FILENAMESPHERE3
-# NAME_USED = NAME[NAME.rfind("\\")+1:len(NAME)-4:]
+NAME = sys.argv[1] # PATH+FILENAMESPHERE3
+NAME_USED = NAME[NAME.rfind("\\")+1:len(NAME)-4:]
 
 coords, speeds, times = [],[],[]
 xdata,ydata,zdata = [],[],[]
@@ -27,7 +28,7 @@ def plotOnlyTwo(data1,data2,axis1,axis2, name):
     ax.grid()
 
     ax.plot(data1, data2, c = 'r')
-    ax.set_title('3D Scatter Plot')
+    ax.set_title(NAME_USED)
 
     ax.set_xlabel(axis1, labelpad=20)
     ax.set_ylabel(axis2, labelpad=20)
@@ -41,7 +42,7 @@ def plotCoordinates(xdata,ydata,zdata, name):
     ax.grid()
 
     ax.scatter(xdata, ydata, zdata, c = 'r', s = 5)
-    ax.set_title('3D Scatter Plot')
+    ax.set_title(NAME_USED)
 
     ax.set_xlabel('x', labelpad=20)
     ax.set_ylabel('y', labelpad=20)
