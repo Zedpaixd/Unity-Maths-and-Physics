@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: 35b15ccd9f3f3414fbff371a2951e32e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Buttstock
+    100002: Charging Handle
+    100004: Ejection Port
+    100006: HandGuard
+    100008: //RootNode
+    100010: Selector
+    100012: Sights_Front
+    100014: Sights_Rear
+    100016: Trigger
+    100018: M16
+    100020: Safety_Lever
+    400000: Buttstock
+    400002: Charging Handle
+    400004: Ejection Port
+    400006: HandGuard
+    400008: //RootNode
+    400010: Selector
+    400012: Sights_Front
+    400014: Sights_Rear
+    400016: Trigger
+    400018: M16
+    400020: Safety_Lever
+    2100000: 03 - Default
+    2300000: Buttstock
+    2300002: Charging Handle
+    2300004: Ejection Port
+    2300006: HandGuard
+    2300008: //RootNode
+    2300010: Selector
+    2300012: Sights_Front
+    2300014: Sights_Rear
+    2300016: Trigger
+    2300018: M16
+    2300020: Safety_Lever
+    3300000: Buttstock
+    3300002: Charging Handle
+    3300004: Ejection Port
+    3300006: HandGuard
+    3300008: //RootNode
+    3300010: Selector
+    3300012: Sights_Front
+    3300014: Sights_Rear
+    3300016: Trigger
+    3300018: M16
+    3300020: Safety_Lever
+    4300000: M16_Body
+    4300002: HandGuard
+    4300004: Ejection Port
+    4300006: Charging Handle
+    4300008: Buttstock
+    4300010: Selector
+    4300012: Sights_Front
+    4300014: Sights_Rear
+    4300016: Trigger
+    4300018: M16
+    4300020: Safety_Lever
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 03 - Default
+    second: {fileID: 2100000, guid: ff544527ce1a9224a81b748c32da65ea, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

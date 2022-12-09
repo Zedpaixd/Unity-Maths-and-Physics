@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &790471366818916921
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1455739995359067149, guid: fd38a755f117b3144a7abc971de4007d,
+        type: 3}
+      propertyPath: m_Name
+      value: RPG-7 Launcher_WithGrenade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881703594564309753, guid: fd38a755f117b3144a7abc971de4007d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881703594564309753, guid: fd38a755f117b3144a7abc971de4007d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881703594564309753, guid: fd38a755f117b3144a7abc971de4007d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881703594564309753, guid: fd38a755f117b3144a7abc971de4007d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881703594564309753, guid: fd38a755f117b3144a7abc971de4007d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881703594564309753, guid: fd38a755f117b3144a7abc971de4007d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881703594564309753, guid: fd38a755f117b3144a7abc971de4007d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881703594564309753, guid: fd38a755f117b3144a7abc971de4007d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881703594564309753, guid: fd38a755f117b3144a7abc971de4007d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881703594564309753, guid: fd38a755f117b3144a7abc971de4007d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881703594564309753, guid: fd38a755f117b3144a7abc971de4007d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fd38a755f117b3144a7abc971de4007d, type: 3}
+--- !u!4 &8340186232826476364 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8738701495549189493, guid: fd38a755f117b3144a7abc971de4007d,
+    type: 3}
+  m_PrefabInstance: {fileID: 790471366818916921}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1286289920683916060
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8340186232826476364}
+    m_Modifications:
+    - target: {fileID: 6337091189195716343, guid: 8003b3883e20fdc45b9d8e23aedd5e56,
+        type: 3}
+      propertyPath: m_Name
+      value: RPG-7 Grenade
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744506661109796159, guid: 8003b3883e20fdc45b9d8e23aedd5e56,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744506661109796159, guid: 8003b3883e20fdc45b9d8e23aedd5e56,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744506661109796159, guid: 8003b3883e20fdc45b9d8e23aedd5e56,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744506661109796159, guid: 8003b3883e20fdc45b9d8e23aedd5e56,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744506661109796159, guid: 8003b3883e20fdc45b9d8e23aedd5e56,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744506661109796159, guid: 8003b3883e20fdc45b9d8e23aedd5e56,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744506661109796159, guid: 8003b3883e20fdc45b9d8e23aedd5e56,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744506661109796159, guid: 8003b3883e20fdc45b9d8e23aedd5e56,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744506661109796159, guid: 8003b3883e20fdc45b9d8e23aedd5e56,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744506661109796159, guid: 8003b3883e20fdc45b9d8e23aedd5e56,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744506661109796159, guid: 8003b3883e20fdc45b9d8e23aedd5e56,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8003b3883e20fdc45b9d8e23aedd5e56, type: 3}

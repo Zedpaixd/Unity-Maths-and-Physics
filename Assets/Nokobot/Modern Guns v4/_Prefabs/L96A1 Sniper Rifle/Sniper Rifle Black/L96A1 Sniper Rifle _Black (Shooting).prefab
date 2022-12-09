@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8912609740589108253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804166291260000983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6be84e4d7829855419c06b94e56bd135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6239003178997867484, guid: 52c30da801a1b2245b74ce5ebe1ff5e9,
+    type: 3}
+  casingPrefab: {fileID: 1630726806575518388, guid: b980563bc55e4004ab0ee3cb68c1b9a1,
+    type: 3}
+  muzzleFlashPrefab: {fileID: 1782395880954752, guid: e802c9c5b472d2345a808aca4bc81014,
+    type: 3}
+  gunAnimator: {fileID: 1893554895761790705}
+  barrelLocation: {fileID: 7332213564873726940}
+  casingExitLocation: {fileID: 4874315912509636}
+  destroyTimer: 2
+  shotPower: 800
+  ejectPower: 250
+--- !u!1001 &4247956383127259275
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4668964035268232604, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+        type: 3}
+      propertyPath: m_Name
+      value: L96A1 Sniper Rifle _Black (With Script)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033478700704093715, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033478700704093715, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033478700704093715, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033478700704093715, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033478700704093715, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033478700704093715, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033478700704093715, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033478700704093715, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033478700704093715, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033478700704093715, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033478700704093715, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4dfa88705a741b54c9199e674f7bb8bd, type: 3}
+--- !u!1 &8804166291260000983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4674009956194845276, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4247956383127259275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1893554895761790705 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2356658003323788922, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4247956383127259275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7332213564873726940 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6859691079562564439, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4247956383127259275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4874315912509636 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4243117596001153103, guid: 4dfa88705a741b54c9199e674f7bb8bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4247956383127259275}
+  m_PrefabAsset: {fileID: 0}

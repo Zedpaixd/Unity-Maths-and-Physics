@@ -4,64 +4,141 @@ using UnityEngine.UIElements.Experimental;
 
 public class BulletScript : MonoBehaviour
 {
+    [SerializeField] public GameObject hitSpot; 
     private float speed;
     private float gravity;
     private Vector3 startPosition;
     private Vector3 startForward;
+    private Vector3 oldPosition;
 
-    private bool isInitialized = false;
+    public bool isInitialized = false;
+
     private float startTime = -1;
+    #region attempt
+    /*
+        public LayerMask layerMask; //make sure we aren't in this layer 
+        public float skinWidth = 0.1f; //probably doesn't need to be changed 
 
+        private float minimumExtent;
+        private float partialExtent;
+        private float sqrMinimumExtent;
+        private Vector3 previousPosition;
+        private Rigidbody myRigidbody;
+
+        void Awake()
+        {
+            myRigidbody = GetComponent<Rigidbody>();
+            previousPosition = myRigidbody.position;
+            minimumExtent = Mathf.Min(Mathf.Min(GetComponent<Collider>().bounds.extents.x, GetComponent<Collider>().bounds.extents.y), GetComponent<Collider>().bounds.extents.z);
+            partialExtent = minimumExtent * (1.0f - skinWidth);
+            sqrMinimumExtent = minimumExtent * minimumExtent;
+        }*/
+    #endregion
     public void Initialize(Transform startPoint, float speed, float gravity)
     {
-        startPosition = startPoint.position;
-        startForward = startPoint.forward;
+        this.startPosition = startPoint.position + startPoint.forward;
+        this.startForward = startPoint.forward.normalized;
         this.speed = speed;
         this.gravity = gravity;
-        startTime = Time.time;
         isInitialized = true;
-
     }
 
-    private Vector3 findPathPoint(float time)
+    private Vector3 FindPointOnParabola(float time)
     {
-        Vector3 point = startPosition + (startForward * speed * time);
-        Vector3 gravityVec =Vector3.down * gravity * time * time;
+        Vector3 point = startPosition + (startForward * time * speed);
+        Vector3 gravityVec = Vector3.down * time * time * gravity;
         return point + gravityVec;
     }
 
-    private bool CastRay(Vector3 startPoint, Vector3 endPoint, out RaycastHit hit)
+    private bool CastRayBetweenPoints(Vector3 startPoint, Vector3 endPoint, out RaycastHit hit)
     {
+        Debug.DrawRay(startPoint, endPoint - startPoint, Color.green, 5);
         return Physics.Raycast(startPoint, endPoint - startPoint, out hit, (endPoint - startPoint).magnitude);
+    }
+
+    private void OnHit(RaycastHit hit)
+    {
+        ShootableObject shootableObject = hit.transform.GetComponent<ShootableObject>();
+        if (shootableObject)
+        {
+            shootableObject.OnHit(hit);
+        }
+        //Destroy(gameObject);
     }
 
     private void FixedUpdate()
     {
+
         if (!isInitialized) return;
-        /*if (startTime < 0)
-        {
-            startTime = Time.time;
-        }*/
+        if (startTime < 0) startTime = Time.time;
 
-        //RaycastHit hit;
+        #region attempt
+        /*Vector3 movementThisStep = myRigidbody.position - previousPosition;
+        float movementSqrMagnitude = movementThisStep.sqrMagnitude;
+
+        if (movementSqrMagnitude > sqrMinimumExtent)
+        {
+            float movementMagnitude = Mathf.Sqrt(movementSqrMagnitude);
+            RaycastHit hitInfo;
+
+            if (Physics.Raycast(previousPosition, movementThisStep, out hitInfo, movementMagnitude, layerMask.value))
+            //myRigidbody.position = hitInfo.point - (movementThisStep / movementMagnitude) * partialExtent;
+            { 
+                isInitialized = false;
+            }
+
+        }
+
+        previousPosition = myRigidbody.position;*/
+        #endregion
+
+
+
         float currentTime = Time.time - startTime;
-        float nextTime = currentTime - Time.fixedDeltaTime;
+        float prevTime = currentTime - Time.fixedDeltaTime;
+        float nextTime = currentTime + Time.fixedDeltaTime;
 
-        Vector3 currentPoint = findPathPoint(currentTime);
-        Vector3 nextPoint = findPathPoint(nextTime);
+        RaycastHit hit;
+        Vector3 currentPoint = FindPointOnParabola(currentTime);
 
-        /*if (CastRay(currentPoint,nextPoint, out hit))
+        if (prevTime > 0)
         {
-            Destroy(gameObject);
-        }*/
+            Vector3 prevPoint = FindPointOnParabola(prevTime);
+            if (CastRayBetweenPoints(prevPoint, currentPoint, out hit))
+            {
+                OnHit(hit);
+            }
+        }
+
+        Vector3 nextPoint = FindPointOnParabola(nextTime);
+        if (CastRayBetweenPoints(currentPoint, nextPoint, out hit))
+        {
+            OnHit(hit);
+        }
     }
 
-    private void Update()
+    void Update()
     {
         if (!isInitialized || startTime < 0) return;
+
         float currentTime = Time.time - startTime;
-        Vector3 currentPoint = findPathPoint(currentTime);
+        Vector3 currentPoint = FindPointOnParabola(currentTime);
+        oldPosition = transform.position;
         transform.position = currentPoint;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("??");
+
+        if (collision.transform.tag == Globals.TARGET_TAG)
+        {
+            isInitialized = false;
+            speed = 0;
+            gravity = 0;
+            Instantiate(hitSpot, oldPosition ,transform.rotation);
+            Destroy(this);
+        }
     }
 }
 
@@ -81,16 +158,16 @@ Here is what I got working:
 float force = 3f;
 public void FixedUpdate()
 {
-    // Same as r.AddForce(force, ForceMode.Force)
-    Vector2 distance = (force / r.mass) * Time.fixedDeltaTime;
-    r.velocity += distance;
+// Same as r.AddForce(force, ForceMode.Force)
+Vector2 distance = (force / r.mass) * Time.fixedDeltaTime;
+r.velocity += distance;
 }
 float force = 3f;
 public void FixedUpdate()
 {
-    // Same as r.AddForce(force, ForceMode.Impulse)
-    Vector2 distance = (force / r.mass);
-    r.velocity += distance;
+// Same as r.AddForce(force, ForceMode.Impulse)
+Vector2 distance = (force / r.mass);
+r.velocity += distance;
 }
 I tested both of them, by superposing two rigidbodies, one using AddForce, while the other used r.velocity +=.So far, it seem my convertion is correct as they move exactly the same.
 

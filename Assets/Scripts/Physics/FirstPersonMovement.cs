@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
 
 public class FirstPersonMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController controller;
     [SerializeField] private Transform cam;
+    [SerializeField] private Transform shootAng;
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private GameObject Scope;
 
     [Header("Mouse")]
     public float mouseSensitivity;
@@ -46,6 +50,14 @@ public class FirstPersonMovement : MonoBehaviour
     public GameObject testBallRecreated;
     public Vector3 prevCoordsRecreated;
 
+    [Header("SniperShooting")]
+    public float shootSpeed;
+    public float gravityForce;
+    public float bulletLifetime;
+    public GameObject sniperBullet;
+    public int rotation = 1;
+    public TextMeshProUGUI distance;
+
     public enum InvertCamera
     {
         inverted = -1,
@@ -66,8 +78,12 @@ public class FirstPersonMovement : MonoBehaviour
         if (!controller)
             controller = GetComponent<CharacterController>();
 
+        #region SPAGHETTI CODE
+
         //Swriter = new StreamWriter("C:\\Users\\Armand\\Desktop\\Ball.txt", false);
         //SwriterRecreated = new StreamWriter("C:\\Users\\Armand\\Desktop\\BallRecreated.txt", false);
+
+        #endregion
     }
 
     private void Update()
@@ -77,14 +93,47 @@ public class FirstPersonMovement : MonoBehaviour
         Jump();
         Shoot();
 
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            Time.timeScale = Mathf.Lerp(Time.timeScale, 0.3f, 0.1f);
+        }
+        else
+        {
+            Time.timeScale = Mathf.Lerp(Time.timeScale, 1, 1f);
+        }
+
+        #region filewriting
 
         //if (testBall && testBall.transform.position != prevCoords) { prevCoords = testBall.transform.position; Writer(testBall.transform.position); }
         //if (testBallRecreated && testBallRecreated.transform.position != prevCoordsRecreated) { prevCoordsRecreated = testBallRecreated.transform.position; WriterRecreated(testBallRecreated.transform.position); }
+
+        #endregion
     }
 
     private void LateUpdate()
     {
         Rotation();
+
+        if (Scope.activeSelf)
+        {
+
+            Ray ray = new(cam.transform.position, cam.transform.forward);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit)) distance.text = hit.distance.ToString();
+            else distance.text = "0";
+
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+
+            {
+                //Scope.transform.rotation = Scope.transform.rotation * Quaternion.Euler(0, 0, 45.0f * rotation);
+                rotation = rotation * -1;
+                mainCamera.fieldOfView = mainCamera.fieldOfView + 5 * rotation;
+            }
+
+
+
+        }
     }
 
     void Movement()
@@ -158,7 +207,18 @@ public class FirstPersonMovement : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (testBall != null)
+            /*GameObject bullet = Instantiate(sniperBullet, transform.position + cam.transform.forward, cam.rotation);
+            BulletScript bulletS = bullet.GetComponent<BulletScript>();
+            if (bulletS) bulletS.Initialize(shootAng, shootSpeed, gravityForce);
+            Destroy(bullet,bulletLifetime);*/
+
+            GameObject temp = Instantiate(projectilePrefab, transform.position + cam.transform.forward * 2, Quaternion.identity);
+            temp.GetComponent<Rigidbody>().AddForce(cam.transform.forward * shootForce, ForceMode.Impulse);
+            Destroy(temp, 20f);
+
+            #region SPAGHETTI CODE
+
+            /*if (testBall != null)
             {
                 GameObject temp = Instantiate(projectilePrefab, transform.position + cam.transform.forward * 2, Quaternion.identity);
                 temp.GetComponent<Rigidbody>().AddForce(cam.transform.forward * shootForce, ForceMode.Impulse);
@@ -169,12 +229,23 @@ public class FirstPersonMovement : MonoBehaviour
                 testBall = Instantiate(projectilePrefab, transform.position + cam.transform.forward * 2, Quaternion.identity);
                 testBall.GetComponent<Rigidbody>().AddForce(cam.transform.forward * shootForce, ForceMode.Impulse);
                 Destroy(testBall, 20f);
-            }
-            
+            }*/
+
+            #endregion
+
         }
         else if (Input.GetMouseButtonDown(1))
         {
-            if (testBallRecreated != null)
+            
+            Scope.SetActive(!Scope.activeSelf);
+            mainCamera.fieldOfView = Scope.activeSelf ? 10 : 60;
+            
+            //Scope.transform.rotation = Scope.transform.rotation * Quaternion.Euler(0, 0, 0 + rotation > 0 ? 0 : -45);
+            rotation = 1;
+
+            #region SPAGHETTI CODE
+
+            /*if (testBallRecreated != null)
             {
                 GameObject bullet = Instantiate(noRBprojectilePrefab, transform.position + cam.transform.forward * 2, Quaternion.identity);
                 var bulletS = bullet.GetComponent<ProjectileMovement>();
@@ -186,12 +257,7 @@ public class FirstPersonMovement : MonoBehaviour
             }
             else
             {
-                /*testBallRecreated = Instantiate(noRBprojectilePrefab, transform.position + cam.transform.forward * 2, Quaternion.identity);
-                BulletScript bulletS = testBallRecreated.GetComponent<BulletScript>();
-                if (bulletS)
-                {
-                    bulletS.Initialize(cam.transform, shootForce, gravity);
-                }*/
+                
                 testBallRecreated = Instantiate(noRBprojectilePrefab, transform.position + cam.transform.forward * 2, Quaternion.identity);
                 var bulletS = testBallRecreated.GetComponent<ProjectileMovement>();
                 if (bulletS)
@@ -199,10 +265,13 @@ public class FirstPersonMovement : MonoBehaviour
                     bulletS.Initialize(cam.transform.forward, shootForce);
                 }
                 Destroy(testBallRecreated, 20f);
-            }
+            }*/
+
+            #endregion
         }
     }
 
+    #region SPAGHETTI CODE
     public void Writer(Vector3 line)
     {
         Swriter.Write(line+"\n");
@@ -211,6 +280,8 @@ public class FirstPersonMovement : MonoBehaviour
     {
         SwriterRecreated.Write(line + "\n");
     }
+
+    #endregion 
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {

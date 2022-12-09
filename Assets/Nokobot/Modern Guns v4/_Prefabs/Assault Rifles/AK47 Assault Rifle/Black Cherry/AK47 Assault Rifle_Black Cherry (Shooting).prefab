@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2053946027007775678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979435006959275317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6be84e4d7829855419c06b94e56bd135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6239003178997867484, guid: 4f80c30ec12f8d349a82ac57f3fb2431,
+    type: 3}
+  casingPrefab: {fileID: 1630726806575518388, guid: dbb0f2854a265964c9496ecd7b6f96eb,
+    type: 3}
+  muzzleFlashPrefab: {fileID: 1782395880954752, guid: e802c9c5b472d2345a808aca4bc81014,
+    type: 3}
+  gunAnimator: {fileID: 6862266659724848113}
+  barrelLocation: {fileID: 1485328166748690659}
+  casingExitLocation: {fileID: 2821767474042837941}
+  destroyTimer: 2
+  shotPower: 750
+  ejectPower: 350
+--- !u!1001 &5846221867652283371
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5719296332653945201, guid: 0efabdf450933444d9283226d836a578,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719296332653945201, guid: 0efabdf450933444d9283226d836a578,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719296332653945201, guid: 0efabdf450933444d9283226d836a578,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719296332653945201, guid: 0efabdf450933444d9283226d836a578,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719296332653945201, guid: 0efabdf450933444d9283226d836a578,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719296332653945201, guid: 0efabdf450933444d9283226d836a578,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719296332653945201, guid: 0efabdf450933444d9283226d836a578,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719296332653945201, guid: 0efabdf450933444d9283226d836a578,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719296332653945201, guid: 0efabdf450933444d9283226d836a578,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719296332653945201, guid: 0efabdf450933444d9283226d836a578,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719296332653945201, guid: 0efabdf450933444d9283226d836a578,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8036983765008961061, guid: 0efabdf450933444d9283226d836a578,
+        type: 3}
+      propertyPath: m_Name
+      value: AK47 Assault Rifle_Black Cherry (With Script)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0efabdf450933444d9283226d836a578, type: 3}
+--- !u!1 &1979435006959275317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5357505057293022942, guid: 0efabdf450933444d9283226d836a578,
+    type: 3}
+  m_PrefabInstance: {fileID: 5846221867652283371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6862266659724848113 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1016222501747757082, guid: 0efabdf450933444d9283226d836a578,
+    type: 3}
+  m_PrefabInstance: {fileID: 5846221867652283371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1485328166748690659 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5025174724070138632, guid: 0efabdf450933444d9283226d836a578,
+    type: 3}
+  m_PrefabInstance: {fileID: 5846221867652283371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2821767474042837941 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8505361537796137054, guid: 0efabdf450933444d9283226d836a578,
+    type: 3}
+  m_PrefabInstance: {fileID: 5846221867652283371}
+  m_PrefabAsset: {fileID: 0}

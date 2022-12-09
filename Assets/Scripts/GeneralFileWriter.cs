@@ -7,14 +7,9 @@ public class GeneralFileWriter : MonoBehaviour
 {
     static StreamWriter Swriter;
 
-    void Start()
+    public static void writeLine(string line, string _fileName = "CollisionStats.txt")
     {
-        
-    }
-
-    public static void writeLine(string line)
-    {
-        using (Swriter = new StreamWriter("C:\\Users\\Armand\\Desktop\\CollisionStats.txt", true))
+        using (Swriter = new StreamWriter("C:\\Users\\Armand\\Desktop\\"+_fileName, true))
         {
             Swriter.Write(line + "\n");
             Swriter.Flush();
@@ -23,9 +18,9 @@ public class GeneralFileWriter : MonoBehaviour
             
     }
 
-    public static void reset()
+    public static void reset(string _fileName = "CollisionStats.txt")
     {
-        using (Swriter = new StreamWriter("C:\\Users\\Armand\\Desktop\\CollisionStats.txt", false))
+        using (Swriter = new StreamWriter("C:\\Users\\Armand\\Desktop\\" + _fileName, false))
         {
             Swriter.Write("");
         }
